@@ -15,6 +15,27 @@ ul {
 
 body#template-default {
   margin-top: 238px; }
+  body#template-default #content div,
+  body#template-default #content section.container.lista,
+  body#template-default #content p,
+  body#template-default #content h2 {
+    cursor: pointer; }
+    body#template-default #content div:hover,
+    body#template-default #content section.container.lista:hover,
+    body#template-default #content p:hover,
+    body#template-default #content h2:hover {
+      outline: 1px dotted #ffffff1c;
+      outline-offset: 10px; }
+  body#template-default .selected {
+    outline: 1px dotted #00bcd4;
+    outline-offset: 10px; }
+    body#template-default .selected:hover {
+      outline: 1px dotted #00bcd4 !important;
+      outline-offset: 10px; }
+  body#template-default #content div.row {
+    outline: none !important; }
+    body#template-default #content div.row:hover {
+      outline: none !important; }
   body#template-default .container,
   body#template-default #content {
     padding: 15px; }
@@ -42,97 +63,19 @@ body#template-default {
     body#template-default .container .tabs,
     body#template-default #content .tabs {
       padding: 15px; }
-    body#template-default .container .selected,
-    body#template-default #content .selected {
-      outline: 1px dotted #00bcd4;
-      outline-offset: 10px; }
-      body#template-default .container .selected:hover,
-      body#template-default #content .selected:hover {
-        outline: 1px dotted #00bcd4 !important;
-        outline-offset: 10px; }
-    body#template-default .container img.selected,
-    body#template-default #content img.selected {
-      border: 3px dotted #00bcd4 !important; }
-      body#template-default .container img.selected:hover,
-      body#template-default #content img.selected:hover {
-        border: 3px dotted #00bcd4  !important; }
-    body#template-default .container .datas__row,
-    body#template-default .container .tabs,
-    body#template-default .container hr,
-    body#template-default .container tr,
-    body#template-default .container th,
-    body#template-default .container td,
-    body#template-default .container .datas__columns,
-    body#template-default .container .container.lista,
-    body#template-default .container h3,
-    body#template-default .container h1,
-    body#template-default .container .accordion-container,
-    body#template-default .container img,
-    body#template-default .container h2,
-    body#template-default .container .columns,
-    body#template-default .container li,
-    body#template-default .container p,
-    body#template-default #content .datas__row,
-    body#template-default #content .tabs,
-    body#template-default #content hr,
-    body#template-default #content tr,
-    body#template-default #content th,
-    body#template-default #content td,
-    body#template-default #content .datas__columns,
-    body#template-default #content .container.lista,
-    body#template-default #content h3,
-    body#template-default #content h1,
-    body#template-default #content .accordion-container,
-    body#template-default #content img,
-    body#template-default #content h2,
-    body#template-default #content .columns,
-    body#template-default #content li,
-    body#template-default #content p {
-      cursor: pointer; }
-      body#template-default .container .datas__row:hover,
-      body#template-default .container .tabs:hover,
-      body#template-default .container hr:hover,
-      body#template-default .container tr:hover,
-      body#template-default .container th:hover,
-      body#template-default .container td:hover,
-      body#template-default .container .datas__columns:hover,
-      body#template-default .container .container.lista:hover,
-      body#template-default .container h3:hover,
-      body#template-default .container h1:hover,
-      body#template-default .container .accordion-container:hover,
-      body#template-default .container img:hover,
-      body#template-default .container h2:hover,
-      body#template-default .container .columns:hover,
-      body#template-default .container li:hover,
-      body#template-default .container p:hover,
-      body#template-default #content .datas__row:hover,
-      body#template-default #content .tabs:hover,
-      body#template-default #content hr:hover,
-      body#template-default #content tr:hover,
-      body#template-default #content th:hover,
-      body#template-default #content td:hover,
-      body#template-default #content .datas__columns:hover,
-      body#template-default #content .container.lista:hover,
-      body#template-default #content h3:hover,
-      body#template-default #content h1:hover,
-      body#template-default #content .accordion-container:hover,
-      body#template-default #content img:hover,
-      body#template-default #content h2:hover,
-      body#template-default #content .columns:hover,
-      body#template-default #content li:hover,
-      body#template-default #content p:hover {
-        outline: 1px dotted #ffffff1c !important;
-        outline-offset: 10px; }
-  body#template-default .container.lista.selected {
-    border: 1px dotted #00bcd4; }
-    body#template-default .container.lista.selected:hover {
-      outline: 1px dotted #00bcd4 !important;
-      outline-offset: 10px; }
-  body#template-default .container.lista {
-    cursor: pointer; }
-    body#template-default .container.lista:hover {
-      outline: 1px dotted #ffffff1c !important;
-      outline-offset: 10px; }
+    body#template-default .container .iframe__capsule,
+    body#template-default #content .iframe__capsule {
+      background: black;
+      width: 100%;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px; }
+      body#template-default .container .iframe__capsule h3,
+      body#template-default #content .iframe__capsule h3 {
+        text-align: center;
+        color: white; }
 
 section#section__navegationOptions {
   z-index: 99999; }
@@ -148,16 +91,71 @@ section#section__navegationOptions {
   background: #ffff;
   box-shadow: 0px 0px 10px 3px #00000012;
   padding: 10px 0px; }
+  section#section__navegationOptionsLeft .pallete,
+  section#section__navegationOptions .pallete {
+    display: flex;
+    width: max-content;
+    border-radius: 5px;
+    flex-direction: column; }
+    section#section__navegationOptionsLeft .pallete .row,
+    section#section__navegationOptions .pallete .row {
+      display: flex;
+      flex-direction: row; }
+    section#section__navegationOptionsLeft .pallete .column,
+    section#section__navegationOptions .pallete .column {
+      display: flex;
+      flex-direction: column; }
+    section#section__navegationOptionsLeft .pallete span.size,
+    section#section__navegationOptions .pallete span.size {
+      font-size: 16px !important; }
+    section#section__navegationOptionsLeft .pallete .color,
+    section#section__navegationOptionsLeft .pallete .currentColor,
+    section#section__navegationOptions .pallete .color,
+    section#section__navegationOptions .pallete .currentColor {
+      display: flex;
+      margin: 7px;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      box-shadow: 0px 0px 0px 1px #d2d2d2; }
+      section#section__navegationOptionsLeft .pallete .color:hover,
+      section#section__navegationOptionsLeft .pallete .currentColor:hover,
+      section#section__navegationOptions .pallete .color:hover,
+      section#section__navegationOptions .pallete .currentColor:hover {
+        box-shadow: 0px 0px 0px 2px gray;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50% !important;
+        transform: scale(1.1); }
   section#section__navegationOptionsLeft input#getTemplateTitle,
-  section#section__navegationOptions input#getTemplateTitle {
+  section#section__navegationOptionsLeft input#getTemplateLinkProd,
+  section#section__navegationOptions input#getTemplateTitle,
+  section#section__navegationOptions input#getTemplateLinkProd {
     padding: 5px;
     margin-left: 20px;
     font-size: 18px;
     color: #1d1d1d;
-    border: none; }
-    section#section__navegationOptionsLeft input#getTemplateTitle:hover,
-    section#section__navegationOptions input#getTemplateTitle:hover {
-      outline: 1px dotted gray; }
+    border: 1px solid #e0e0e0; }
+    section#section__navegationOptionsLeft input#getTemplateTitle:focus, section#section__navegationOptionsLeft input#getTemplateTitle:hover,
+    section#section__navegationOptionsLeft input#getTemplateLinkProd:focus,
+    section#section__navegationOptionsLeft input#getTemplateLinkProd:hover,
+    section#section__navegationOptions input#getTemplateTitle:focus,
+    section#section__navegationOptions input#getTemplateTitle:hover,
+    section#section__navegationOptions input#getTemplateLinkProd:focus,
+    section#section__navegationOptions input#getTemplateLinkProd:hover {
+      outline: none; }
+  section#section__navegationOptionsLeft select#getTemplateTypeAmbience,
+  section#section__navegationOptions select#getTemplateTypeAmbience {
+    padding: 5px;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #1d1d1d;
+    border: 1px solid #e0e0e0; }
+    section#section__navegationOptionsLeft select#getTemplateTypeAmbience:focus, section#section__navegationOptionsLeft select#getTemplateTypeAmbience:hover,
+    section#section__navegationOptions select#getTemplateTypeAmbience:focus,
+    section#section__navegationOptions select#getTemplateTypeAmbience:hover {
+      outline: none; }
   section#section__navegationOptionsLeft .section__row,
   section#section__navegationOptions .section__row {
     display: flex !important;
@@ -340,6 +338,13 @@ body.coreBody {
           box-shadow: 0px 0px 10px 3px #00000010;
           cursor: pointer;
           transition: .5s; }
+          body.coreBody #section__home .container .section__row .section__column .tag-you {
+            padding: 5px;
+            color: white;
+            margin-top: 14px;
+            background: #4c4c4c;
+            border-radius: 3px;
+            font-size: 12px; }
           body.coreBody #section__home .container .section__row .section__column:first-of-type {
             margin-left: 0 !important; }
           body.coreBody #section__home .container .section__row .section__column:last-of-type {
@@ -358,6 +363,8 @@ body.coreBody {
             align-items: center; }
           body.coreBody #section__home .container .section__row .section__column .btn-options {
             display: flex; }
+            body.coreBody #section__home .container .section__row .section__column .btn-options img {
+              width: 16px !important; }
             body.coreBody #section__home .container .section__row .section__column .btn-options a.btn-excluir {
               width: auto !important;
               height: auto !important;
@@ -366,7 +373,7 @@ body.coreBody {
               margin-bottom: 15px;
               color: #565656;
               border: 1px solid #565656;
-              margin: 10px 5px; }
+              margin: 10px 2px; }
               body.coreBody #section__home .container .section__row .section__column .btn-options a.btn-excluir:hover {
                 background: #565656;
                 color: white !important; }
@@ -461,3 +468,5 @@ section#section__navegationOptionsLeft {
       height: 200px;
       width: 200px;
       object-fit: cover; }
+
+/*# sourceMappingURL=core.css.map */

@@ -81,8 +81,42 @@ ul {
 }
 
 body#template-default {
-
 	margin-top: 238px;
+
+
+
+	// Selecao
+	#content div,
+	#content section.container.lista,
+	#content p,
+	#content h2 {
+		cursor: pointer;
+		&:hover {
+		    outline: 1px dotted #ffffff1c;
+		    outline-offset:10px;
+		}
+	}
+
+	.selected {
+	    outline: 1px dotted #00bcd4;
+	    outline-offset:10px;
+		&:hover {
+		    outline: 1px dotted #00bcd4 !important;
+		    outline-offset:10px;
+		}
+	}
+
+	#content div.row {
+		outline: none !important;
+		&:hover {
+			outline: none !important;
+		}
+	}
+
+
+
+
+
 	
 	.container,
 	#content {
@@ -114,68 +148,36 @@ body#template-default {
 		    padding: 5px;
 		}
 
-		// .row.selected,		
 		
 		.tabs {
 			padding: 15px;
 		}
 
 		
-		.selected {
-		    outline: 1px dotted #00bcd4;
-		    outline-offset:10px;
-			&:hover {
-			    outline: 1px dotted #00bcd4 !important;
-			    outline-offset:10px;
+
+
+
+		.iframe__capsule {
+		  background: black;
+		  width:100%;
+		  height: 400px;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  padding:15px;
+			
+			h3 {
+			  text-align:center;
+			  color:white;
 			}
 		}
 
-		img.selected {
-			 border: 3px dotted #00bcd4 !important;
-			 &:hover {
-			 	border: 3px dotted #00bcd4  !important;
-			 }
-		}
-		
-		.datas__row,
-		.tabs,
-		hr,
-		tr,
-		th,
-		td,
-		.datas__columns,
-		.container.lista,
-		h3,
-		h1,
-		.accordion-container,
-		img,
-		h2,
-		.columns,
-		li,
-		p{
-			cursor: pointer;
-			&:hover {
-			    outline: 1px dotted #ffffff1c !important;
-			    outline-offset:10px;
-			}
-		}
 	}
 
-	.container.lista.selected {
-	    border: 1px dotted #00bcd4;
-		&:hover {
-		    outline: 1px dotted #00bcd4 !important;
-		    outline-offset:10px;
-		}
-	}
 
-	.container.lista {
-		cursor: pointer;
-		&:hover {
-		    outline: 1px dotted #ffffff1c !important;
-		    outline-offset:10px;
-		}		
-	}
+
+
+
 }
 
 
@@ -186,6 +188,53 @@ section#section__navegationOptions{
 
 section#section__navegationOptionsLeft,
 section#section__navegationOptions {
+
+
+
+	.pallete {
+	  display:flex;
+	  width:max-content;
+	  border-radius: 5px;
+	  flex-direction: column;
+
+	  .row {
+	    display:flex;
+	    flex-direction: row;
+	  }
+	  
+	  .column {
+	    display:flex;
+	    flex-direction: column;
+	  }
+	
+
+		span.size{
+		    font-size: 16px !important;
+		}
+		
+	 
+	  .color,
+	  .currentColor {
+	    display: flex;
+	    margin:7px;
+	    border-radius: 50%;
+	    width:20px;
+	    height:20px;
+	    box-shadow: 0px 0px 0px 1px #d2d2d2;
+	    
+	    
+	    &:hover{
+	      box-shadow:0px 0px 0px 2px gray;
+      	    	border-radius: 50%;
+	    width:20px;
+	    height:20px;
+	    border-radius: 50% !important;
+	    transform: scale(1.1);
+	    }
+	  }
+	}
+
+
 
 	color: $colorSecondary;
 	position: fixed;
@@ -198,17 +247,33 @@ section#section__navegationOptions {
     padding: 10px 0px;
 
 
-	input#getTemplateTitle {
+	input#getTemplateTitle,
+	input#getTemplateLinkProd {
 	    padding: 5px;
 	    margin-left: 20px;
 	    font-size: 18px;
 	    color: #1d1d1d;
-	    border: none;
+	    border: 1px solid #e0e0e0;
 
-		&:hover {
-			outline: 1px dotted gray;
-		}
 
+	    &:focus,
+	    &:hover {
+	    	outline: none;
+	    }
+
+	}
+
+	select#getTemplateTypeAmbience {
+	    padding: 5px;
+	    margin-left: 20px;
+	    font-size: 16px;
+	    color: #1d1d1d;
+	    border: 1px solid #e0e0e0;
+
+	    &:focus,
+	    &:hover {
+	    	outline: none;
+	    }
 	}
 	
 
@@ -447,6 +512,18 @@ body.coreBody {
 			        cursor: pointer;
 			        transition: .5s;
 
+
+
+					.tag-you {
+					    padding: 5px;
+					    color: white;
+					    margin-top: 14px;
+					    background: #4c4c4c;
+					    border-radius: 3px;
+					    font-size: 12px;
+					}
+
+
 					&:first-of-type {
 						margin-left:0 !important;
 					}
@@ -476,8 +553,10 @@ body.coreBody {
 
 					.btn-options {
    						 display: flex;
-							
-
+	
+						img {
+							width: 16px !important;
+						}
 
 						a.btn-excluir {
 						    width: auto !important;
@@ -487,12 +566,13 @@ body.coreBody {
 	    					margin-bottom: 15px;
 	    					color: #565656;
 	    					border: 1px solid #565656;
-	    					margin: 10px 5px;	
+	    					margin: 10px 2px;	
 
 							&:hover {
 								background: #565656;
 	   							color: white !important;
 	    					}
+
 
 						}
 
