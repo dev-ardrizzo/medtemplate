@@ -1,17 +1,10 @@
 <?php
-session_start();
-require 'classes/banco.php';
-$banco = new Banco("medtemplate.mysql.dbaas.com.br", "medtemplate", "medtemplate", "KsY9#*SvJZuXR");
+require 'classes/connect.php';
 
-
-	if(isset($_SESSION['id']) == true ) {
-		header("Location: templates.php");
-	} 
-
-	
+if(isset($_SESSION['id']) == true ) {
+	header("Location: templates.php");
 	$idSessao = $_SESSION['id']; 
-
-
+} 
 ?>
 
 
@@ -88,6 +81,7 @@ h1 {
 	<input type="submit" value="Entrar">
 
 <?php 
+
 if(isset($_POST['userEmail']) && empty($_POST['userEmail']) == false) {
 
 	$userEmail = addslashes($_POST['userEmail']);

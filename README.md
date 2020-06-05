@@ -1,13 +1,13 @@
 <h1>Iniciativa do time Avassaladores - MEDTemplate.</h1>
 
-<p>Solucao client-side para desenvolvimento de hotsites para o MEDGRUPO.</p>
+<p>Solução client-side para desenvolvimento de hotsites para o MEDGRUPO.</p>
 
 <small>Teconolgias utilizadas: HTML, CSS, JS & PHP.</small>
 
 <hr>
 
 
-<p>Quando surgiu a possibilidade de fazer os hotsites de informativos a gente não quis onerar os fronts e como era somente diagramação, o matou no peito e atuou na demanda. Porém, surgiu novamente a mesma demanda. Então, tínhamos algumas opções:
+<p>Quando surgiu a possibilidade de fazer os hotsites de informativos, o time não quis onerar os fronts. Como era somente diagramação, matamos no peito e atuamos na demanda. Porém, surgiu novamente. Então, tínhamos algumas opções:
 </p>
 
 <ol>

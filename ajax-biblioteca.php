@@ -1,23 +1,16 @@
-
 <?php 
+require 'classes/connect.php';
 
+$templateUserId = $_POST['templateUserId'];
 
-	require 'classes/banco.php';
-	$banco = new Banco("medtemplate.mysql.dbaas.com.br", "medtemplate", "medtemplate", "KsY9#*SvJZuXR");
+$banco->query("SELECT * FROM images WHERE userId = '$templateUserId' ORDER BY imageId DESC ");
 
-	$templateUserId = $_POST['templateUserId'];
+foreach ($banco->result() as $dados ){
 
+	echo "<li class='box-template'><img onclick='copySrcSidebar(event)' src='/app/".$dados['imageSrc']."'/></li>";
 
-	$banco->query("SELECT * FROM images WHERE userId = '$templateUserId' ORDER BY imageId DESC ");
-
-	foreach ($banco->result() as $dados ){
-
-		echo "<li class='box-template'><img onclick='copySrcSidebar(event)' src='/app/".$dados['imageSrc']."'/></li>";
-
-	}
-
-
-  ?>
+}
+?>
 
 
 

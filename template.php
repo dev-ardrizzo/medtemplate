@@ -1,10 +1,7 @@
 
 <?php
-session_start();
-require 'classes/banco.php';
-// $banco = new Banco("localhost", "ardrizzodesig_medtemplate", "ardrizzodesig_admin", "Re%Dla=kMwq9");
-$banco = new Banco("medtemplate.mysql.dbaas.com.br", "medtemplate", "medtemplate", "KsY9#*SvJZuXR");
 
+require 'classes/connect.php';
 
 if(!isset($_SESSION['id']) && !empty($_SESSION['id']) == false ) {
     header("Location: index.php");

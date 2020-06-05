@@ -1,14 +1,10 @@
 
 <?php
-session_start();
-require 'classes/banco.php';
-// $banco = new Banco("localhost", "ardrizzodesig_medtemplate", "ardrizzodesig_admin", "Re%Dla=kMwq9");
-$banco = new Banco("medtemplate.mysql.dbaas.com.br", "medtemplate", "medtemplate", "KsY9#*SvJZuXR");
-
+require 'classes/connect.php';
 $idSessao = $_SESSION['id']; 
-
 $templateId = $_GET["templateId"];
 ?>
+
 <html>
 
 <head>
