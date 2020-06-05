@@ -16,37 +16,12 @@ $idSessao = $_SESSION['id'];
 <head>
 	<meta charset="UTF-8">
 	<title>MEDTemplate Beta</title>
-	<!-- MEDTEPLATE -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/css.css"> -->
     <link rel="stylesheet" type="text/css" href="css/core.css">
-    <!-- FINAL MEDTEPLATE -->
-
-	<!-- MEDTEPLATE -->
 	<script src="js/core-js.js"></script>
-	<!-- FINAL MEDTEMPLATE -->
-
-	<!-- Hotjar Tracking Code for http://ardrizzodesign.com.br/ -->
-	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:1790355,hjsv:6};
-	        a=o.getElementsByTagName('head')[0];
-	        r=o.createElement('script');r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-	</script>
-
-    
 </head>
 <body class="coreBody">
 
-<?php //require 'sidebar.php' ?>
-
-
 <style>
-	
-
 #section__home {
 	margin-top: 170px;
 }
@@ -57,13 +32,10 @@ $idSessao = $_SESSION['id'];
 
 <section id="section__home">
 
-
 	<div class="container" style="overflow: hidden;">
 		<h1>MEDTEMPLATE</h1>	
 	</div>
 	
-
-
 	<div class="container">
 
 		<h3>Produção</h3>
@@ -71,21 +43,25 @@ $idSessao = $_SESSION['id'];
 
 			<?php 
 
-
-
 			$banco->query("SELECT * FROM templates WHERE templateTypeAmbience = 'prod' ");
-
 			foreach ($banco->result() as $dados ){
 
+				$getTemplateUserId = $dados['templateUserId'];
+
 				echo "<div class='section__column'>";
-
-
-
 				
 				 if($idSessao == $dados['templateUserId']) {
 					echo "<div class='tag-you'>";
 					echo("Feito por você");
 					echo "</div>";
+				} else {
+					$banco->query("SELECT * FROM users WHERE userId = '$getTemplateUserId' ");
+					foreach ($banco->result() as $dadosAuthor ){
+						$authorTemplate = $dadosAuthor['userName'];
+					}
+					echo "<div class='tag-you'>";
+					echo("Feito por ").$authorTemplate ;
+					echo "</div>";		
 				}
 				
 

@@ -30,7 +30,7 @@ foreach ($banco->result() as $dados ){
     <ul class="section__menu">
       <li class="section__menu--dropdown"><span href="">Arquivo</span>
         <ul>
-          <li><span><a href="/app/templates.php">Templates</a></span></li>
+          <li><span><a href="templates.php">Templates</a></span></li>
           <li><span onclick="contentExport()">Exportar</span></li>
         </ul>
       </li>
